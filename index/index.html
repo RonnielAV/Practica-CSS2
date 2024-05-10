@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quality Gadgets RD</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+
+    <body>
+
+      <div class="sidebar">
+
+            <img src="img/logo.png" alt="Logo" style="width:200px; height:auto;">
+            <p> </p>
+            <a href="index.html"> Inicio </a>
+            <a href="https://qualitygadgetsrd.com/"> Productos </a>
+            <a href="#"> Servicios </a>
+            <a href="https://api.whatsapp.com/send?phone=18093160799&text=Hola,%20estoy%20interesado%20en%20probar%20el%20demo."> Contacto </a>
+            <a href="https://linktr.ee/QualityGadgetsRD"> Redes sociales </a>
+      </div>
+            
+      <div class="content">
+                  <h1 style="font-size: 68px; font-weight: bold;">Quality Gadgets RD </h1>
+                  <h2 style="font-size: 30px;"> Tu tienda virtual de gadgets tecnológicos en RD </h2>
+      </div>            
+     
+      <div class="carrusel">
+        <div class="carrusel-imagenes">
+            <img src="img/gadget1.png" alt="Gadget 1" style="width:75%; height:auto;">
+            <img src="img/gadget2.png" alt="Gadget 2" style="width:75%; height:auto;">
+      </div>
+      <a class="prev" onclick="mover(-1)">&#10094;</a>
+      <a class="next" onclick="mover(1)">&#10095;</a>
+      </div>
+    
+      <div class="carrusel" onmouseover="detenerCarrusel()" onmouseout="iniciarCarrusel()">
+        <!-- ... -->
+      </div>
+
+      <script>
+        var indice = 0;
+        mostrarImagenes(indice);
+        var timer = setInterval(function() { mover(1); }, 3000);
+
+    
+        function mover(n) {
+            mostrarImagenes(indice += n);
+        }
+    
+        function mostrarImagenes(n) {
+            var i;
+            var x = document.getElementsByClassName("carrusel-imagenes")[0].getElementsByTagName("img");
+            if (n > x.length - 1) {indice = 0}
+            if (n < 0) {indice = x.length - 1}
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[indice].style.display = "block";
+        }
+
+        function detenerCarrusel() {
+            clearInterval(timer);
+        }
+        function iniciarCarrusel() {
+            timer = setInterval(function() { mover(1); }, 3000);
+        }
+        </script> 
+    </body
+</html>
+      
